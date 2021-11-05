@@ -1,3 +1,4 @@
+# Capturar imagen desde webcam
 ## 1.- Crear controlador Cam
 ```
 rails generate controller Cam index
