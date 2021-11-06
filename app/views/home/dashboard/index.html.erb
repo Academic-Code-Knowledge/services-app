@@ -1,0 +1,64 @@
+<div class='container'>
+     <div class="card">
+        <div class="card-body"> 
+            <h2 class="card-title d-flex justify-content-between mb4">
+                <span>Resumen</span>
+            </h2>  
+             <div class='table-responsive'>
+                <table class="table table-success table-striped table-bordered">
+                    <tr>
+                        <td>
+                            <h5>Cantidad de ingresos</h5>
+                        </td>
+                        <td>
+                            <h6><%= x.ingresos %></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>Cantidad de Egresos</h5>
+                        </td>
+                        <td>
+                            <h6><%= x.egresos %></h6>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body"> 
+            <h2 class="card-title d-flex justify-content-between mb4">
+                <span>Listado de Servicios</span>
+            </h2>  
+             <div class='table-responsive'>
+                <table class="table table-success table-striped table-bordered">
+                    <thead>
+                        <tr>
+                        <th scope="col">Número de orden</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% 'model'.each do |'model'| %>
+                        <tr>
+                            <td><%= x.id %></td>
+                            <td><%= x.name %></td>
+                            <td><%= x.description %></td>
+                            <td><%= x.status %></td>                                
+                            <td> <%= link_to 'Tracking', 'path'(x.tracking, x), class: 'btn btn-success btn-sm' %></td>
+                            <td> <%= link_to 'Factura', 'path'(x.factura, x), class: 'btn btn-primary btn-sm' %></td>
+        
+                        </tr>
+                    </tbody>              
+                      
+                </table>
+            </div>
+        </div>
+    </div>
+</div>    
+
+
+
