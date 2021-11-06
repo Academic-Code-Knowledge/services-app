@@ -1,38 +1,4 @@
-<!-- <h2>Log in</h2> -->
-
 <div class="container p-5 ">
-
-  <div class="container-fluid d-flex">
-    <div class="me-auto border border-dark border-1 p-2">
-      <h1>TechnoServicio</h1>
-    </div>
-      <div class="ms-auto">
-    </div>
-  </div>
-
-  <hr>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light border border-dark border-1">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse d-flex justify-content-center">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <%= link_to "Home", home_index_path, class:"nav-link active"%>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Donde estamos</a>
-          </li>
-        </ul>  
-      </div>
-    </div>
-  </nav>
-
-  <br/>
-  <br/>
-  
   <div class="container-fluid" style="max-width: 500px">
     <div class="text-center">
       <h2>Inicio de Sesión</h2>
@@ -50,12 +16,11 @@
       </div>
       <br />
       <div class="actions mt-3">
-        <%= f.submit "Iniciar Sesión", style: 'width:100%; height:40px', class: "rounded-pill border-1 btn-secondary" %>
+        <%= f.submit "Iniciar Sesión", style: 'width:100%; height:40px', class: "rounded-pill border-1 btn-primary" %>
       </div>
       <div class="actions mt-3">
-        <%= link_to "Cancelar", home_index_path, class:"btn btn-secondary rounded-pill border-1" ,style:'width:100%;height:40px'  %>
+        <%= link_to "Cancelar", home_landing_path, class:"btn btn-dark rounded-pill border-1" ,style:'width:100%;height:40px'  %>
       </div>
     <% end %>
-
   </div>
 </div>
