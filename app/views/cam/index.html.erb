@@ -1,0 +1,22 @@
+<h1>Cam#index</h1>
+<p>Find me in app/views/cam/index.html.erb</p>
+<!-- Stream video via webcam -->
+<div class="row d-flex p-2 bd-highlight">
+  <div class="col-sm text-center">
+    <video class="border position-relative" id="video" playsinline autoplay></video>
+  </div>
+  <div class="col-sm text-center">
+    <!-- Webcam video snapshot -->
+    <canvas class="border position-relative" id="canvas" width="320" height="240"></canvas>
+  </div>
+</div>
+<div class="row d-flex p-2 bd-highlight">
+  <div class="col-sm text-center">
+    <button id="snap">Capturar Imagen</button>
+  </div>
+  <div class="col-sm text-center">
+    <button id="save" type="button">save image</button>
+  </div>
+</div>
+<%= javascript_include_tag "cam.js" %>
+
