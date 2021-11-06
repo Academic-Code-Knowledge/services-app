@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
         if resource.role == 'admin' || resource.role == 'operator'
             admin_root_path
         else
-            root_path
+            home_index_path
         end
     end
 end
