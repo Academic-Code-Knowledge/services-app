@@ -10,8 +10,68 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
-    <h1>Vista usuarios</h1>
+  
+<body>
+<% if user_signed_in? %>
+<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="navbar-text">
+          <%= link_to "Home", home_index_path, method: :get %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Servicios</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="#">Equipos</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="#">Facturas</a>
+        </li>   
+      </ul>
+      <span class="navbar-text">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<% else %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="navbar-text">
+          <%= link_to "Home", home_index_path, method: :get %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Servicios</a>
+        </li> 
+      </ul>
+      <span class="navbar-text">
+      
+         <%= link_to "Login", user_session_path, method: :post %>
+      </span>
+    </div>
+  </div>
+</nav>
+<% end %>
+
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
