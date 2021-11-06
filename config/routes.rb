@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'cam/index'
+  get "cam/index"
   devise_for :users
-  get 'home/index'
-  root to: 'home#index'
+  get "home/index"
+  post "cam/save"
+  root to: "home#index"
   namespace :admin do
-    get 'home/index'
-    get 'home/index' => 'home#index', :as => :root
+    get "home/index"
+    get "home/index" => "home#index", :as => :root
   end
 end

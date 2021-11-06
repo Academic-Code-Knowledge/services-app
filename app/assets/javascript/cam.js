@@ -1,4 +1,3 @@
-'use strict';
 
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
@@ -34,7 +33,15 @@ init();
 
 // Draw image
 var context = canvas.getContext('2d');
-context.drawImage(video, 0, 0, 320, 240);
+var dataURL = ""
 snap.addEventListener("click", function () {
     context.drawImage(video, 0, 0, 320, 240);
-});
+    dataURL =  canvas.toDataURL('image/png');
+    console.log(dataURL)
+})
+
+save.addEventListener("click", function () {
+    console.log(dataURL)
+    $.post('/cam/save', {image:`${dataURL}`,name:`${Date.now()}`});
+    location.reload();
+})
