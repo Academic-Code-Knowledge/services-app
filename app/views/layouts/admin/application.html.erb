@@ -13,69 +13,57 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-  <div class="row flex-nowrap">
-    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <span class="fs-5 d-none d-sm-inline">Menu</span>
-        </a>
-        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-          <li>
-              <%# <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle"> %>
-                  <%# <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a> %>
-              <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                <li class="w-100 mb-2">
-                  <%= link_to admin_home_index_path do %>
-                    <i class="fas fa-home"></i> <span class="d-none d-sm-inline text-success text-decoration-none">Home</span>
-                  <% end %>
-                </li>
-                <li class="w-100 mb-2">
-                  <%= link_to admin_home_index_path do %>
-                    <i class="fas fa-tools"></i> <span class="d-none d-sm-inline text-success text-decoration-none">Services</span>
-                  <% end %>
-                </li>
-                <li class="w-100 mb-2">
-                  <%= link_to admin_home_index_path do %>
-                    <i class="fas fa-user-friends"></i> <span class="d-none d-sm-inline text-success text-decoration-none">Users</span>
-                  <% end %>
-                </li>
-                <li class="w-100 mb-2">
-                  <%= link_to admin_home_index_path do %>
-                    <i class="fas fa-mobile-alt"></i> <span class="d-none d-sm-inline text-success text-decoration-none">Devices</span>
-                  <% end %>
-                </li>
-                <li class="w-100 mb-2">
-                  <%= link_to admin_home_index_path do %>
-                    <i class="fas fa-file-invoice-dollar"></i> <span class="d-none d-sm-inline text-success text-decoration-none">Invoices</span>
-                  <% end %>
-                </li>
-                <li class="w-100 mb-2">
-                  <%= link_to "Log out", destroy_session_path(:user), :method => :delete %>
-                </li>
-               
-                <li class="w-100">
-                  <a href="#" class="nav-link px-0 text-success"> <i class="fas fa-mobile-alt"></i> <span class="d-none d-sm-inline">text no decoration link</span> </a>
-                </li>
-                <%# <li>
-                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
-                </li> %>
-              </ul>
-          </li>
-        </ul>
-        <hr>
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none" id="dropdownUser1" aria-expanded="false">
-          <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-          <span class="d-none d-sm-inline mx-1"><h6>Hi! <%= current_user.email.split("@")[0] %> </span>
-          <%# <span class="d-none d-sm-inline mx-1">Admin</span> %>
-        </a>
+    <div class="container-fluid" >
+      <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 mw-20 col-xl-2 px-sm-2 px-0 bg-primary sidebar">
+        <%# <div class="col-auto col-md-2 col-xl-3 px-sm-2 px-0 bg-dark"> %>
+          <div class="d-flex flex-column align-items-center align-items-sm-start p-3 min-vh-100 max-w-100">
+          <%# <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100"> %>
+            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none">
+              <span class="fs-5 d-none d-sm-inline text-light">Menu</span>
+            </a>
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+              <li>
+                <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                  <li class="w-100 mb-2">
+                    <%= link_to admin_home_index_path, class: "text-decoration-none" do %>
+                      <i class="fas fa-home"></i> <span class="d-none d-sm-inline ">Inicio</span>
+                    <% end %>
+                  </li>
+                  <li class="w-100 mb-2">
+                    <%= link_to admin_home_index_path, class: "text-decoration-none" do %>
+                      <i class="fas fa-user-friends fa-xs"></i> <span class="d-none d-sm-inline fs-6">Usuarios</span>
+                    <% end %>
+                  </li>
+                  <li class="w-100 mb-2">
+                    <%= link_to admin_home_index_path, class: "text-decoration-none" do %>
+                      <i class="fas fa-tools fa-xs"></i> <span class="d-none d-sm-inline">Servicios</span>
+                    <% end %>
+                  </li>
+                  <li class="w-100 mb-2">
+                    <%= link_to admin_home_index_path, class: "text-decoration-none" do %>
+                      <i class="fas fa-mobile-alt"></i> <span class="d-none d-sm-inline">Equipos</span>
+                    <% end %>
+                  </li>
+                  <li class="w-100 mb-2">
+                    <%= link_to admin_home_index_path, class: "text-decoration-none" do %>
+                      <i class="fas fa-file-invoice-dollar"></i> <span class="d-none d-sm-inline">Facturas</span>
+                    <% end %>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <hr>
+            <a href="#" class="d-flex align-items-center text-light text-decoration-none" id="dropdownUser1" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="admin/operator" width="30" height="30" id="shape_img">
+              <span class="d-none d-sm-inline mt-2"> <h6> <small> <%= current_user.email.split("@")[0] %> </small> </h6></span>
+                <%= link_to admin_home_index_path, class: "align-items-center align-items-sm-start  text-decoration-none" do %>
+                  <i class="fas fa-sign-out-alt"></i> <span class="d-none d-sm-inline">Logout</span>
+                <% end %>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
 </html>
-
-
-
