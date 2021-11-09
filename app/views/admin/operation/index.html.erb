@@ -1,0 +1,25 @@
+<%# Codigo Vista Operador %>
+<div class="col-lg-12">
+  <h1>Equipos en transito</h1>
+  <div class="col col-lg-12 ">
+    <table class="table ml-2">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Ingresos</th>
+          <th scope="col">Egresos</th>
+          <th scope="col">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @operations.each do |post|%>
+          <tr>
+            <td style='width: 300px, text-align: center'><%= post.stage_name%></td>
+            <td style='width: 300px, text-align: center'><%= post.status%></td>
+            <td><%= link_to "Ver", {:action => :procesar, :id => post.id}, :class => 'btn btn-primary' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

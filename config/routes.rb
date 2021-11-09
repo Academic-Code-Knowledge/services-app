@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root to: "home#landing"
   namespace :admin do
     get "home/index"
+    get "operation/index"
+    get "operation/procesar"
     get "home/index" => "home#index", :as => :root
   end
 end
