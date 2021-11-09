@@ -1,20 +1,35 @@
-@import "./config/fonts";
-@import "./config/colors";
-@import "./config/bootstrap_variables";
+@import './config/fonts';
+@import './config/colors';
+@import './config/bootstrap_variables';
 
-.nav-link, .navbar-brand {
-    color: white !important;
+.nav-link,
+.navbar-brand {
+	color: white !important;
 }
 
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
 
 body {
-    padding: 0;
-    margin: 0;
-    min-height: 100vh;
+	padding: 0;
+	margin: 0;
+	min-height: 100vh;
+}
+// style admin/operator Daniel
+.sidebar {
+	min-width: 40px;
+	max-width: 140px;
+	// pile {
+	// 	min-width: 116px;
+	// }
+	a {
+		color: white;
+	}
+}
+#shape_img {
+	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
-// impport font awesome stylesheets Daniel
+// import font awesome stylesheets Daniel
 $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/fontawesome';
 @import '@fortawesome/fontawesome-free/scss/solid';
