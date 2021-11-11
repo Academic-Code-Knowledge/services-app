@@ -50,4 +50,5 @@ gem 'devise'
 gem 'cancan'
 gem 'chart-js-rails'
 gem 'chartkick'
-# gem 'wdm', '>= 0.1.0'
+gem 'wdm', '>= 0.1.0'
+gem "chartkick"
