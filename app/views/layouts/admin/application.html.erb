@@ -8,14 +8,13 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     
-    <%# stylesheet link added Daniel %>
-    <%# <%= stylesheet_link_tag '/admin/home.scss' %>
+    
   </head>
 
   <body>
     <div class="container-fluid">
   <div class="row flex-nowrap">
-    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+    <div class="col-3 px-0 bg-dark">
       <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
         <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <span class="fs-5 d-none d-sm-inline">Menu</span>
@@ -71,7 +70,10 @@
         </a>
       </div>
     </div>
-    <%= yield %>
+    <div class='col-9'>
+     <%= yield %>
+    </div>
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </body>

@@ -16,4 +16,25 @@ class User < ApplicationRecord
   def user?
     role == 'user'
   end
+
+  def ingresos
+    sum = 0
+    orders.each do |order|
+      sum = sum +1
+    end
+    sum
+  end
+  
+  def egresos
+    sum = 0
+    orders.each do |order|
+      if order.date_out != nil
+        sum = sum +1
+      end
+    end
+    sum
+  end
+
+  
+  
 end
