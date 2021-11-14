@@ -1,0 +1,39 @@
+<div class='container'>
+    <div class="card">
+        <div class="card-body"> 
+            <h2 class="card-title d-flex justify-content-between mb4">
+                <span>Listado de Servicios en Transito</span>
+            </h2>  
+             <div class='table-responsive'>
+                <table class="table table-success table-striped table-bordered">
+                    <thead>
+                        <tr>
+                        <th scope="col">Número de orden</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Recepcion</th>
+                        <th scope="col">Servicio</th>
+                        <th scope="col">Etapa</th>
+                        <th scope="col">Avance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @operations.each do |operation| %>
+                            <% if operation.status != 'complete'%>
+                                <tr>
+                                    <td><%= operation.order.id %></td>
+                                    <td><%= operation.order.issue_description %></td>
+                                    <td><%= operation.order.date_in %></td>
+                                    <td><%= operation.order.service.name %></td> 
+                                    <td><%= operation.status %></td>
+                                    <td><%= operation.avance %></td>
+                                    <td> <%= link_to 'operacion', admin_operation_index_path, class:'btn btn-success btn-sm'%></td>
+                                </tr>
+                            <% end %>
+                        <%end%>
+                    </tbody>              
+                      
+                </table>
+            </div>
+        </div>
+    </div>
+</div>  
