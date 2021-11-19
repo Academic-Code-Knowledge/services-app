@@ -3,26 +3,20 @@
     <title>ServicesApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <%# links Daniel %>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="style.css">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-    
-    
+    <%= stylesheet_link_tag '/admin/home.scss' %>
   </head>
-
   <body>
     <div class="container-fluid" >
       <div class="row flex-nowrap">
         <div class="col-3 px-0 bg-primary sidebar">
-        <%# <div class="col-auto col-md-2 col-xl-3 px-sm-2 px-0 bg-dark"> %>
           <div class="d-flex flex-column align-items-center align-items-sm-start p-3 min-vh-100 max-w-100">
-          <%# <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100"> %>
             <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none">
               <span class="fs-5 d-none d-sm-inline text-light">Menu</span>
             </a>
@@ -32,6 +26,11 @@
                   <li class="w-100 mb-2">
                     <%= link_to admin_home_index_path, class: "text-decoration-none" do %>
                       <i class="fas fa-home"></i> <span class="d-none d-sm-inline ">Inicio</span>
+                    <% end %>
+                  </li>
+                  <li class="w-100 mb-2">
+                    <%= link_to admin_operation_index_path, class: "text-decoration-none" do %>
+                      <i class="fas fa-home"></i> <span class="d-none d-sm-inline ">Operaciones</span>
                     <% end %>
                   </li>
                   <li class="w-100 mb-2">
@@ -64,10 +63,12 @@
             <hr>
             <a href="#" class="d-flex align-items-center text-light text-decoration-none" id="dropdownUser1" aria-expanded="false">
               <img src="https://github.com/mdo.png" alt="admin/operator" width="30" height="30" id="shape_img">
-              <span class="d-none d-sm-inline mt-2"> <h6> <small> <%= current_user.email.split("@")[0] %> </small> </h6></span>
-                <%= link_to admin_home_index_path, class: "align-items-center align-items-sm-start  text-decoration-none" do %>
-                  <i class="fas fa-sign-out-alt"></i> <span class="d-none d-sm-inline">Logout</span>
-                <% end %>
+              <span class="d-none d-sm-inline mt-2">
+                <h6> <small> <%= current_user.email.split("@")[0] %> </small> </h6>
+              </span>
+              <%= link_to admin_home_index_path, class: "align-items-center align-items-sm-start  text-decoration-none" do %>
+                <i class="fas fa-sign-out-alt"></i> <span class="d-none d-sm-inline">Logout</span>
+              <% end %>
             </a>
           </div>
         </div>

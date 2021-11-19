@@ -1,0 +1,32 @@
+<% if current_user.role == 'admin' %>
+  <h1>AAAAA</h1>
+<% else %>
+  <%# Codigo Vista Operador %>
+  <div class="col-lg-12">
+    <h1>Estado de orden numero <%= @order.id%></h1>
+    <div class="col col-lg-12 ">
+      <table class="table ml-2">
+        <thead>
+          <tr>
+            <th scope="col">Stage ID</th>
+            <th scope="col">Status</th>
+            <th scope="col">Estimate Time</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created_at</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @stages.each do |stage|%>
+            <tr>
+              <td style='width: 300px, text-align: center'><%= stage.id%></td>
+              <td style='width: 300px, text-align: center'><%= stage.id_service(stage.id)%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>
