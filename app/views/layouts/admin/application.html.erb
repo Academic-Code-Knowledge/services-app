@@ -12,7 +12,7 @@
   <body>
     <div class="container-fluid" >
       <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 mw-20 col-xl-2 px-sm-2 px-0 bg-primary sidebar">
+        <div class="col-3 px-0 bg-primary sidebar">
           <%# <div class="col-auto col-md-2 col-xl-3 px-sm-2 px-0 bg-dark"> %>
           <div class="d-flex flex-column align-items-center align-items-sm-start p-3 min-vh-100 max-w-100">
             <%# <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100"> %>
@@ -25,6 +25,11 @@
                   <li class="w-100 mb-2">
                     <%= link_to admin_home_index_path, class: "text-decoration-none" do %>
                       <i class="fas fa-home"></i> <span class="d-none d-sm-inline ">Inicio</span>
+                    <% end %>
+                  </li>
+                  <li class="w-100 mb-2">
+                    <%= link_to admin_operation_index_path, class: "text-decoration-none" do %>
+                      <i class="fas fa-home"></i> <span class="d-none d-sm-inline ">Operaciones</span>
                     <% end %>
                   </li>
                   <li class="w-100 mb-2">
@@ -53,7 +58,7 @@
             <hr>
             <a href="#" class="d-flex align-items-center text-light text-decoration-none" id="dropdownUser1" aria-expanded="false">
               <img src="https://github.com/mdo.png" alt="admin/operator" width="30" height="30" id="shape_img">
-              <span class="d-none d-sm-inline mt-2"> 
+              <span class="d-none d-sm-inline mt-2">
                 <h6> <small> <%= current_user.email.split("@")[0] %> </small> </h6>
               </span>
               <%= link_to admin_home_index_path, class: "align-items-center align-items-sm-start  text-decoration-none" do %>
@@ -61,6 +66,9 @@
               <% end %>
             </a>
           </div>
+        </div>
+        <div class="col-9">
+          <%= yield %>
         </div>
       </div>
     </div>
