@@ -1,0 +1,45 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="modalLabel">Modal title</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th colspan="3">
+                    <%= simple_form_for([:admin, @stage], :remote => true, :html=> { class: "row row-cols-lg-auto g-3 align-items-center" }) do |f| %>
+                        <%= f.input :service_id, :as => :hidden, :input_html => { :value => @service.id } %>
+                        <div class="col-12">
+                            <%= f.input :name %>
+                        </div>
+                        <div class="col-12">
+                            <%= f.input :time %>
+                        </div>
+                        <div class="col-12 mt-auto mb-0">
+                            <button type="submit" class="btn btn-primary my-auto">Grabar</button>
+                        </div>
+                    <% end %>
+                </th>                          
+            </tr>        
+            <tr>
+                <th>name</th>
+                <th>time</th>
+                <th class="text-center">Acciones</th>                
+            </tr>
+        </thead>
+        <tbody>
+            <% @service.stages.each do |stage| %>
+                <% if stage.persisted? %>
+                    <tr>
+                        <td><%= stage.name %></td>
+                        <td><%= stage.time %></td>
+                        <td>
+                                <%= link_to 'Editar', admin_service_path(service.id), {:remote => true, "data-target" => "#modal", "data-toggle" => "modal", 'data-backdrop' => 'static', 'data-keyboard' => 'false', class: 'btn btn-primary'} %>
+                                <%= link_to 'Eliminar', admin_delete_service_path(service.id), {:remote => true, "data-target" => "#modal", "data-toggle" => "modal", 'data-backdrop' => 'static', 'data-keyboard' => 'false', class: 'btn btn-danger'} %>
+                        </td>
+                    </tr>
+                <%end %>
+            <% end %>
+        </tbody>
+    </table>                
+</div>
