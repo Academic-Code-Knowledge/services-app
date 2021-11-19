@@ -1,0 +1,2 @@
+$("#modal").find(".modal-content").html("<%= j render(:partial => 'admin/stages/indexmodal', :locals => { :service => @service, :stage => @stage})%>");
+$("#modal").modal('show');

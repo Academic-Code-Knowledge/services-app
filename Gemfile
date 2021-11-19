@@ -50,3 +50,5 @@ gem 'devise'
 gem 'cancan'
 gem 'chart-js-rails'
 gem 'chartkick'
+
+gem 'simple_form'

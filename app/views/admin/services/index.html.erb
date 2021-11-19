@@ -1,0 +1,30 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="4" class="text-end">
+                <%= button_to 'Crear', new_admin_service_url, { method: :get,  :remote => true,  "data-target" => "#modal", "data-toggle" => "modal", 'data-backdrop' => 'static', 'data-keyboard' => 'false', class: 'btn btn-primary'} %>
+            </th>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <th>Valor</th>
+            <th>Etapas</th>
+            <th>Duracion</th>
+            <th colspan="2" class="text-center">Acciones</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <% @services.each do |service| %>
+            <tr>
+                <td><%= service.name %></td>
+                <td><%= service.amount %></td>
+                <td><%= link_to service.stages.count, admin_service_stages_path(service.id), {:remote => true, "data-target" => "#modal", "data-toggle" => "modal", 'data-backdrop' => 'static', 'data-keyboard' => 'false', class: 'badge bg-primary text-decoration-none'} %></td>
+                <td><%= service.stages.inject(0){|sum,x| sum + x.time } %></td>
+                <td class="text-center"><%= link_to 'Editar', admin_service_path(service.id), {:remote => true, "data-target" => "#modal", "data-toggle" => "modal", 'data-backdrop' => 'static', 'data-keyboard' => 'false', class: 'btn btn-primary'} %></td>                
+                <td class="text-center"><%= link_to 'Eliminar', admin_delete_service_path(service.id), {:remote => true, "data-target" => "#modal", "data-toggle" => "modal", 'data-backdrop' => 'static', 'data-keyboard' => 'false', class: 'btn btn-danger'} %></td>                
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+

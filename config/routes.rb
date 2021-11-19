@@ -1,5 +1,7 @@
-Rails.application.routes.draw do
-  
+Rails.application.routes.draw do  
+  namespace :admin do
+    get 'stages/index'
+  end
   get "cam/index"
 
   devise_for :users
@@ -22,6 +24,10 @@ Rails.application.routes.draw do
     get 'device/index'
     get 'service/index'
     get 'invoice/index'
+    resources :services
+    get "services/vaga/:id", action: :delete_service, controller: :services, as: :delete_service
+    get "services/:id/stages", action: :service_stages, controller: :services, as: :service_stages
+    resources :stages
   end
 
 

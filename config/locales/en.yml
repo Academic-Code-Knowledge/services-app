@@ -30,4 +30,13 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      service:
+        name: "Nombre"
+    errors:
+      models:
+        service:
+          attributes:
+            name:
+              blank: "no puede estar vacio"
