@@ -26,5 +26,18 @@
         <p class="alert"><%= alert %></p>
       </div>
     </div>
+    <script>
+      var menuBtn = document.getElementById("menuClick");
+      var sideNav = document.getElementById("sideNav");
+      sideNav.style.left = "-100px";
+      menuBtn.onclick = function () { 
+        if(sideNav.style.left == "-100px") {
+          sideNav.style.left = "0";
+        }
+        else {
+          sideNav.style.left = "-100px"
+        }
+      }
+    </script>
   </body>
 </html>
