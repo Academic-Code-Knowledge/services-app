@@ -48,6 +48,10 @@
                     <%= link_to admin_home_index_path, class: "text-decoration-none" do %>
                       <i class="fas fa-file-invoice-dollar"></i> <span class="d-none d-sm-inline">Facturas</span>
                     <% end %>
+                  <li class="w-100 mb-2">
+                  <%= link_to admin_order_new_path do %>
+                      <i class="fas fa-book-open"></i> <span class="d-none d-sm-inline text-success text-decoration-none">Reception</span>
+                  <% end %>
                   </li>
                 </ul>
               </li>

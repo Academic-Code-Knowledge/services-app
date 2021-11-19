@@ -1,0 +1,67 @@
+<h1>formulario</h1>
+
+
+<div class="container p-5 ">
+  <div class="container-fluid" style="max-width: 800px">
+    <div class="text-center">
+      <h2>Formulario de Recepción</h2>
+    </div>
+    <br />    
+    <%= form_for :order, :url => {:action => :create} do |f| %>
+      <div class="field">
+        <%= f.label "Usuario" %><br />
+        <div class="d-flex">
+            <%= f.collection_select :user_id,  User.all, :id, :first_name, prompt:"Por favor, seleccione una opción." %>
+            <%= link_to "Nuevo Usuario", admin_order_new_path , class:"btn btn-Secondary rounded-pill border-1 m-1", style:"width:200px" %>
+        </div>
+      </div>
+      <br />
+      <div class="field">
+        <%= f.label "Equipo" %><br />
+        <div class="d-flex">
+          <%= f.collection_select :device_id,  Device.all, :id, :name, prompt:"Por favor, seleccione una opción." %>
+          <%= link_to "Nuevo Equipo", admin_order_new_path , class:"btn btn-Secondary rounded-pill border-1 m-1", style:"width:200px" %>
+        </div>
+      </div>
+      <br />
+      <div class="field">
+        <%= f.label "Servicio" %><br />
+        <div class="d-flex">
+          <%= f.collection_select :service_id,  Service.all, :id, :name, prompt:"Por favor, seleccione una opción." %>
+          <%= link_to "Nuevo Servicio", admin_order_new_path , class:"btn btn-Secondary rounded-pill border-1 m-1", style:"width:200px" %>
+        </div>
+      </div>
+      <br />
+      <div class="field">
+        <%= f.label "Descripcion" %><br />
+        <%= f.text_area :issue_description, style: 'width:100%' %>
+      </div>
+      <br />
+      <div class="field">
+        <%= f.label "Operador" %><br />
+        <div class="d-flex">
+          <%= f.label current_user.email, class:"form-control" %>
+        </div>
+      </div>
+      <br />
+      <div class="field">
+        <%= f.label "Fecha Estimada de Entrega" %>
+        <%= f.date_field :date_out %>
+        <%= f.hidden_field :date_in, value: Time.now %>
+      </div>
+      <br />
+      <div class="field">
+        <%= f.label "Cargar foto" %><br />
+        <div class="d-flex">
+          <%= f.file_field :photo%>
+        </div>
+      </div>
+      <br />
+      <div class="d-flex actions mt-3">
+        <%= link_to "Cancelar", admin_order_new_path, class:"btn btn-dark rounded-pill border-1 m-1" ,style:'width:50%;height:40px'  %>
+        <%= f.submit "Ingresar", class:"btn btn-dark rounded-pill border-1 m-1" ,style:'width:50%;height:40px'  %>
+      </div>
+    <% end %>
+  </div>
+</div>
+  

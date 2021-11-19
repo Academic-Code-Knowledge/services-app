@@ -37,6 +37,19 @@ module Admin
         render :action => 'new'
       end
     end
+
+
+    # def create  
+    #   params.permit!
+    #   @order = Order.new(params[:order])
+    #   if @order.save
+    #     redirect_to :action => :show, :id => @order.id 
+    #   else 
+    #     render action: "new"
+    #   end
+    # end
+    
+
     
     def edit
     

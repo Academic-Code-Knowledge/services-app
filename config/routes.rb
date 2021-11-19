@@ -1,8 +1,4 @@
 Rails.application.routes.draw do  
-  namespace :admin do
-    get 'stages/index'
-    get 'operation/index'
-  end
   get "cam/index"
 
   devise_for :users
@@ -14,10 +10,11 @@ Rails.application.routes.draw do
 
     resources :users do
       resources :orders, only: [:index, :show, :create]
-    end
- 
+    end    
 
   namespace :admin do
+    get 'stages/index'
+    get 'operation/index'
     get "home/index"
     get "home/index" => "home#index", :as => :root
     get 'stage/index' 
@@ -25,16 +22,20 @@ Rails.application.routes.draw do
     get 'device/index'
     get 'service/index'
     get 'invoice/index'
+    get 'order/new'
+    get 'order/show'
+    post 'order/create'
     resources :services
     get "services/vaga/:id", action: :delete_service, controller: :services, as: :delete_service
     get "services/:id/stages", action: :service_stages, controller: :services, as: :service_stages
     resources :stages
+    resources :orders do
+      resources :operations, only: [:index, :show, :create]
+    end
   end
 
 
   
-  resources :orders do
-    resources :operations, only: [:index, :show, :create]
-  end
+  
  
 end
