@@ -1,6 +1,7 @@
 Rails.application.routes.draw do  
   namespace :admin do
     get 'stages/index'
+    get 'operation/index'
   end
   get "cam/index"
 

@@ -17,5 +17,15 @@ class Operation < ApplicationRecord
 
   def not_started
     status == 'not-started'
+  
+  def avance
+    avance = 0
+    if status == 'not-started'
+      avance = 0
+    elsif status == 'in-progress'
+      avance = 50
+    elsif status == 'complete'
+      avance = 100 
+    end
   end
 end

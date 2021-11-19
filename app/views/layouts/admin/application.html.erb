@@ -40,7 +40,7 @@
                     <% end %>
                   </li>
                   <li class="w-100 mb-2">
-                    <%= link_to admin_home_index_path, class: "text-decoration-none" do %>
+                    <%= link_to admin_order_index_path, class: "text-decoration-none" do %>
                       <i class="fas fa-mobile-alt"></i> <span class="d-none d-sm-inline">Equipos</span>
                     <% end %>
                   </li>
@@ -87,6 +87,11 @@
         <div class="modal-content">
         </div>
       </div>
+      <div class='col-9'>
+      <%= yield %>
+      </div>
     </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
