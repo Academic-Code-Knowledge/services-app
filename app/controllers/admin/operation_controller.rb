@@ -1,6 +1,7 @@
-class Admin::OperationController < ApplicationController
-    def index
-        @operations = Operation.all
+module Admin
+    class OperationController < AdminController
+        def index
+            @operations = Operation.all
+        end    
     end
-    
 end

@@ -17,6 +17,7 @@ class Operation < ApplicationRecord
 
   def not_started
     status == 'not-started'
+  end
   
   def avance
     avance = 0
