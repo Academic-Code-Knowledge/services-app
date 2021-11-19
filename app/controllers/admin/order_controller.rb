@@ -7,9 +7,9 @@ module Admin
       if params[:user_id]
         @user = User.find_by(params[:user_id])
         @orders = @user.orders
-        @operations = Operation.all
       else
         @orders = Order.all
+        @operations = Operation.all
       end
     end
 
