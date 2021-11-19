@@ -2,6 +2,11 @@
   <head>
     <title>ServicesApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <%# links Daniel %>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -97,5 +102,30 @@
     </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <%
+=begin%>
+ <%= render partial: "shared/sidebar" %>
+        <%= yield %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    </div>
+    <script>
+      var menuBtn = document.getElementById("menuClick");
+      var sideNav = document.getElementById("sideNav");
+      sideNav.style.left = "-100px";
+      menuBtn.onclick = function () { 
+        if(sideNav.style.left == "-100px") {
+          sideNav.style.left = "0";
+        }
+        else {
+          sideNav.style.left = "-100px"
+        }
+      }
+    </script> 
+<%
+=end%>
+
   </body>
 </html>
