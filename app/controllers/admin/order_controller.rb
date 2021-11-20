@@ -24,17 +24,29 @@ module Admin
     end
 
     def show
-      @order = current_user.orders.find(params[:id])
-      @user = @order.users.build
+      params.permit!
+      @order = Order.find(params[:id])
+      # @order = current_user.orders.find(params[:id])
+      # @user = @order.users.build
     end
     
     def create
-      @order = current_user.orders.build(order_params)
+      params.permit!
+      @order = Order.new(params[:order])
       if @order.save
-        flash[:notice] = "Orden creada correctamente"
-        redirect_to admin_order_url(@order)
+        redirect_to :action => :show, :id => @order.id
       else
-        render :action => 'new'
+        render admin_order_new_path
+
+
+
+
+      # @order = current_user.order.build(order_params)
+      # if @order.save
+      #   flash[:notice] = "Orden creada correctamente"
+      #   redirect_to admin_order_url(@order)
+      # else
+      #   render :action => 'new'
       end
     end
 
@@ -72,7 +84,7 @@ module Admin
     
     private
     def set_order
-      @order = current_user.orders.find(params[:id])
+      @order = Order.find(params[:id])
     end
   
     def order_params

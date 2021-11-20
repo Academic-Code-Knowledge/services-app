@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     get 'stages/index'
     get 'operation/index'
     get "home/index"
-    get "operation/index"
+    # get "operation/index"
     get "operation/procesar"
     get "home/index" => "home#index", :as => :root
     get 'stage/index' 

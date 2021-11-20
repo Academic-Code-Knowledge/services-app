@@ -2,16 +2,20 @@
 <nav id="sideNav">
   <ul>
     <li><small><%= link_to "Dashboard", admin_home_index_path , class: "text-decoration-none links" %></small></li>
-    <li><small><%= link_to "Usuarios", admin_home_index_path , class: "text-decoration-none links" %></small></li>
-    <li><small><%= link_to "Servicios", admin_home_index_path , class: "text-decoration-none links" %></small></li>
-    <li><small><%= link_to "Equipos", admin_home_index_path , class: "text-decoration-none links" %></small></li>
+    <li><small><%= link_to "Servicios", admin_services_path , class: "text-decoration-none links" %></small></li>
+    <li><small><%= link_to "Formularios", admin_order_new_path , class: "text-decoration-none links" %></small></li>
+    <li><small><%= link_to "Equipos", admin_device_index_path , class: "text-decoration-none links" %></small></li>
+    <li><small><%= link_to "Etapas", admin_stages_index_path , class: "text-decoration-none links"  %></small></li>
     <% if current_user.role == "admin" %>
-      <li><small><%= link_to "Facturas", admin_home_index_path , class: "text-decoration-none links" %></small></li>
+      <li><small><%= link_to "Órdenes", admin_order_index_path , class: "text-decoration-none links" %></small></li>
+      <li><small><%= link_to "Facturas", invoices_path , class: "text-decoration-none links" %></small></li>
+    <% else %> 
+      <li><small><%= link_to "Operaciones", admin_operation_index_path , class: "text-decoration-none links" %></small></li>
     <% end %>
 
     <li>
       <% if current_user.role == "admin" %>
-        <%= link_to image_tag("admin50.png"), destroy_user_session_path, method: :delete , class: "rounded-circle" %>
+        <div class= "rounded-circle" ><%= link_to image_tag("admin50.png"), destroy_user_session_path, method: :delete , class: "rounded-circle" %></div>
         <small> <%= current_user.email.split("@")[0] %> </small>
       <% else %>
         <%= link_to image_tag("operator50.png"), destroy_user_session_path, method: :delete , class: "rounded-circle" %>
