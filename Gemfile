@@ -52,3 +52,4 @@ gem 'chart-js-rails'
 gem 'chartkick'
 
 gem 'simple_form'
+gem 'pg'
