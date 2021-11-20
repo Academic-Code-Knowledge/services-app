@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "home/index"
   get "home/landing"
   post "cam/save"
+  get 'invoice/index'
   root to: "home#landing"
 
 
