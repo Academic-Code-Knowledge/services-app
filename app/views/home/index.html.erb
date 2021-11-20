@@ -55,7 +55,7 @@
                                         <td><%= order.issue_description %></td>
                                         <td><%= order.status %></td>                                
                                         <td> <%= link_to 'Tracking', admin_home_index_path,  class: 'btn btn-success btn-sm' %></td>
-                                        <td> <%= link_to 'Factura', admin_invoice_index_path, class: 'btn btn-primary btn-sm' %></td>
+                                        <td> <%= link_to 'Factura', invoices_path, method: :get , class: 'btn btn-primary btn-sm' %></td>
                                     </tr>
                                 
                             <% end %>
